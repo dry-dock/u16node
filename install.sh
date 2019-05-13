@@ -11,6 +11,12 @@ openssh-client \
 vsftpd \
 smbclient
 
+export NVM_VERSION=v0.33.9
+echo "================= Installing NVM "$NVM_VERSION" ================"
+curl -sS https://raw.githubusercontent.com/creationix/nvm/"$NVM_VERSION"/install.sh | bash
+
+# Set NVM_DIR so the installations go to the right place
+export NVM_DIR="/root/.nvm"
 
 echo "================= Installing Python packages =================="
 apt-get install -q -y \
@@ -20,14 +26,6 @@ python-dev=2.7*
 
 pip install -q virtualenv==16.5.0
 pip install -q pyOpenSSL==19.0.0
-
-export NVM_VERSION=v0.33.9
-echo "================= Installing NVM "$NVM_VERSION" ================"
-curl -sS https://raw.githubusercontent.com/creationix/nvm/"$NVM_VERSION"/install.sh | bash
-
-# Set NVM_DIR so the installations go to the right place
-export NVM_DIR="/root/.nvm"
-
 
 echo "================= Installing CLIs packages ======================"
 
