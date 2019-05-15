@@ -20,12 +20,18 @@ export NVM_DIR="/root/.nvm"
 
 echo "================= Installing Python packages =================="
 apt-get install -q -y \
-python-pip=8.1* \
-python-software-properties=0.96* \
-python-dev=2.7*
+python-pip \
+python2.7-dev
+
+# python-software-properties \
+# python-dev=2.7*
 
 pip install -q virtualenv==16.5.0
 pip install -q pyOpenSSL==19.0.0
+
+export JQ_VERSION=1.5*
+echo "================= Adding JQ $JQ_VERSION ========================="
+apt-get install -y -q jq="$JQ_VERSION"
 
 echo "================= Installing CLIs packages ======================"
 
@@ -55,7 +61,7 @@ echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
 sudo tee /etc/apt/sources.list.d/azure-cli.list
 curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo apt-get install -q apt-transport-https=1.2*
+sudo apt-get install -q apt-transport-https
 sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
 JFROG_VERSION=1.25.0
