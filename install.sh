@@ -19,15 +19,15 @@ curl -sS https://raw.githubusercontent.com/creationix/nvm/"$NVM_VERSION"/install
 export NVM_DIR="/root/.nvm"
 
 echo "================= Installing Python packages =================="
+echo "================= Installing Python packages =================="
 apt-get install -q -y \
-python-pip \
-python2.7-dev
-
-# python-software-properties \
-# python-dev=2.7*
+python-pip=8.1* \
+python-software-properties=0.96* \
+python-dev=2.7*
 
 pip install -q virtualenv==16.5.0
 pip install -q pyOpenSSL==19.0.0
+
 
 export JQ_VERSION=1.5*
 echo "================= Adding JQ $JQ_VERSION ========================="
