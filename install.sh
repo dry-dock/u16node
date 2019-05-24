@@ -25,6 +25,9 @@ curl -sS https://raw.githubusercontent.com/creationix/nvm/"$NVM_VERSION"/install
 # Set NVM_DIR so the installations go to the right place
 export NVM_DIR="/root/.nvm"
 
+# add source of nvm to .bashrc - allows user to use nvm as a command
+echo "source ~/.nvm/nvm.sh" >> /etc/drydock/.env
+
 echo "================= Installing Python packages =================="
 apt-get install -q -y \
 python-pip=8.1* \
