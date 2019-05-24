@@ -5,6 +5,7 @@ mkdir -p "$HOME/.ssh/"
 mv /u16node/config "$HOME/.ssh/"
 mv /u16node/90forceyes /etc/apt/apt.conf.d/
 touch "$HOME/.ssh/known_hosts"
+mkdir -p /etc/drydock
 
 echo "================= Installing basic packages ================"
 apt-get update
